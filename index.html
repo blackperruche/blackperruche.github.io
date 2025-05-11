@@ -40,29 +40,22 @@
           </em>
         </h1>
 
-        <div class="boutons-bio">
-          <button onclick="toggleBio('jack')">🎤 Voir Jack</button>
-          <button onclick="toggleBio('james')">🎸 Voir James</button>
-        </div>
-
         <div class="origines-row">
-          <div class="origine-profil" id="profil-jack">
+          <div class="origine-profil">
             <img src="jack.jpg" alt="Photo de Jack">
-            <h2 class="origine-nom"><span class="icon">🎤</span> Jack</h2>
+            <h2 class="origine-nom" onclick="toggleBio('jack')"><span class="icon">🎤</span> Jack</h2>
             <p class="bio-text" id="bio-jack"></p>
           </div>
 
-          <div class="origine-profil" id="profil-james">
+          <div class="origine-profil">
             <img src="james.jpg" alt="Photo de James">
-            <h2 class="origine-nom"><span class="icon">🎸</span> James</h2>
+            <h2 class="origine-nom" onclick="toggleBio('james')"><span class="icon">🎸</span> James</h2>
             <p class="bio-text" id="bio-james"></p>
           </div>
         </div>
       </div>
 
-      <!-- Autres sections conservées (Réseaux, Concerts, Playlists, Contact) -->
-      <!-- ... identiques à version précédente ... -->
-
+      <!-- Les autres sections à insérer ici si besoin -->
     </div>
 
     <audio id="audio-player" src="" preload="auto"></audio>
@@ -75,11 +68,7 @@
 
       function playCurrentTrack() {
         audio.src = playlist[currentTrack].file;
-        audio.play().then(() => {
-          playButton.style.display = "none";
-        }).catch(() => {
-          playButton.style.display = "block";
-        });
+        audio.play().then(() => playButton.style.display = "none").catch(() => playButton.style.display = "block");
         audio.onended = () => {
           currentTrack = (currentTrack + 1) % playlist.length;
           playCurrentTrack();
@@ -102,58 +91,45 @@
       }
 
       function showSection(id) {
-        document.querySelectorAll('.section').forEach(section => {
-          section.style.display = 'none';
-        });
+        document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
         document.getElementById(id).style.display = 'block';
       }
 
       window.onload = () => {
         showSection('accueil');
-        document.getElementById('profil-jack').style.display = 'none';
-        document.getElementById('profil-james').style.display = 'none';
       };
 
       const bios = {
         jack: {
           element: document.getElementById("bio-jack"),
-          container: document.getElementById("profil-jack"),
           text: `Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock). Après une longue pause à se chercher il revient à l’évidence : il faut se consacrer à la musique. Une formation de technicien du son studio dans la poche, il enchaîne les projets solos : un 1er EP électro-pop sous le pseudo « Carmen » puis un 2 ème en préparation, cette fois-ci sous « Matheus » et des chansons à textes. Rêveur, appliqué avec une touche de folie, Jack retrouve avec Black Perruche la tangente entre les musiques noires américaines, la pop culture et l’énergie des duos en osmose.`,
           click: 0
         },
         james: {
           element: document.getElementById("bio-james"),
-          container: document.getElementById("profil-james"),
           text: `C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif et de punk rock comme Nirvana et Sex Pistols. Il élargit son univers au fur et à mesure des rencontres, pour finalement ne pas se donner de limite. Il apprend mais enseigne aussi à de nombreux élèves. S’il multiplie les formations amateurs, il collabore notamment avec Amazigh Kateb. Vous l’aurez compris, la guitare a toujours fait partie intégrante de sa vie. Apaisant, mélodieux et passionné il saura faire vibrer les coeurs comme il fait vibrer les cordes de ses doigts.`,
           click: 0
         }
       };
 
-      function typeText(bioKey, index = 0) {
-        const bio = bios[bioKey];
+      function typeText(name, index = 0) {
+        const bio = bios[name];
         const words = bio.text.split(" ");
         if (index < words.length) {
           bio.element.innerHTML = words.slice(0, index + 1).join(" ") + " ";
-          setTimeout(() => typeText(bioKey, index + 1), 35);
+          setTimeout(() => typeText(name, index + 1), 35);
         }
       }
 
       function toggleBio(name) {
         const bio = bios[name];
         bio.click++;
-        const isFirst = bio.click % 3 === 1;
-        const isSecond = bio.click % 3 === 2;
-        const isThird = bio.click % 3 === 0;
-
-        if (isFirst) {
-          bio.container.style.display = "block";
+        if (bio.click % 3 === 1) {
           bio.element.innerText = "";
           typeText(name);
-        } else if (isSecond) {
+        } else if (bio.click % 3 === 2) {
           bio.element.innerText = "";
-          bio.container.style.display = "none";
         } else {
-          bio.container.style.display = "block";
           bio.element.innerText = bio.text;
         }
       }
