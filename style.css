@@ -139,12 +139,14 @@ nav a:hover {
 
 .bio-text {
   color: white;
-  margin-top: 15px;
-  font-size: 1em;
+  margin-top: 20px;
+  font-size: 1.15em;
+  line-height: 1.8em;
   text-align: justify;
-  line-height: 1.6em;
-  max-width: 100%;
-  padding: 0 10px;
+  padding: 0 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* LOGO + PLAY */
