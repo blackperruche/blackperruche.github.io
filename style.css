@@ -224,3 +224,42 @@ nav ul li a:hover {
   font-size: 1.3em;
   line-height: 1.2;
 }
+.playlist-title,
+.playlist-question {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.playlist-list li {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.3em;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+
+.playlist-logo {
+  width: 26px;
+  height: 26px;
+  margin-right: 10px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-top: 3px;
+}
