@@ -183,3 +183,15 @@ nav ul li a:hover {
     transform: translateX(0);
   }
 }
+.concert-infos {
+  font-size: 1.2em;
+  font-style: normal;
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #FFD700;
+}
+
+.concert-infos span {
+  display: inline-block;
+  margin: 0 5px;
+}
