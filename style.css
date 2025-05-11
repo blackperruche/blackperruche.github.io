@@ -265,3 +265,9 @@ nav a:hover {
 .contact-form button:hover {
   background-color: #e6c200;
 }
+.origine-phrase {
+  text-align: center;
+  line-height: 1.8em;
+  margin: 40px auto 30px auto;
+  max-width: 800px;
+}
