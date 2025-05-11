@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to right, #0f0f0f, #1e1e1e);
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: white;
 }
 
@@ -42,6 +43,7 @@ nav a:hover {
   padding-top: 60px;
   min-height: 100vh;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .content-wrapper {
@@ -113,6 +115,24 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+.reseau-icon {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition 0.6s ease-out forwards;
+}
+
+.reseau-icon:nth-child(1) { animation-delay: 0.2s; }
+.reseau-icon:nth-child(2) { animation-delay: 0.4s; }
+.reseau-icon:nth-child(3) { animation-delay: 0.6s; }
+.reseau-icon:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes apparition {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .reseau-icon img {
   width: 40px;
   height: 40px;
@@ -163,6 +183,23 @@ nav a:hover {
   font-size: 1.2em;
 }
 
+/* SECTION CONTACT */
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+#contact .label {
+  color: gold;
+  font-weight: bold;
+}
+
+#contact a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -194,22 +231,6 @@ nav a:hover {
 
 .contact-form button:hover {
   background-color: #e6c200;
-}
-
-#contact p {
-  margin: 10px 0;
-  font-size: 1.1em;
-}
-
-#contact .label {
-  color: white;
-  font-weight: bold;
-}
-
-#contact a {
-  color: gold;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 /* Responsive */
