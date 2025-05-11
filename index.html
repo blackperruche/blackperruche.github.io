@@ -56,6 +56,68 @@
           </div>
         </div>
       </div>
+
+      <div id="reseaux" class="section">
+        <h2 class="highlight"><em>Viens nous écouter sur ton réseau préféré</em><span class="icon">🎶</span></h2>
+        <div class="reseaux-icons">
+          <a href="https://www.instagram.com/blackperruche" target="_blank" class="reseau-icon">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.tiktok.com/@black.perruche" target="_blank" class="reseau-icon">
+            <img src="tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://www.youtube.com/@BlackPerruche" target="_blank" class="reseau-icon">
+            <img src="youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576150134806" target="_blank" class="reseau-icon">
+            <img src="facebook.png" alt="Facebook">
+          </a>
+        </div>
+      </div>
+
+      <div id="concerts" class="section">
+        <h2 class="highlight"><em>Viens nous voir jouer le...</em></h2>
+        <p class="concert-infos">
+          <span>28 Juin</span> · 
+          <span>19h</span> · 
+          <span>à La Friche en Herbe</span> · 
+          <span>15 Rue Emile Zola, 39400 Hauts-de-Bienne</span>
+        </p>
+      </div>
+
+      <div id="playlists" class="section">
+        <h2 class="playlist-title highlight">Choisis toi-même ton concert selon le mood recherché :</h2>
+        <ul class="playlist-list">
+          <li>
+            <img src="logo.png" alt="Logo Black Perruche" class="playlist-logo">
+            <strong>La Black Perruche</strong> : un style virevoltant qui vous met les plumes, pour un moment original et authentique (pop rock, folk, blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🔥</span>
+            <strong>La groove un max</strong> : la vibe afro-américaine réveille le danseur fou qui est en vous (blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🌙</span>
+            <strong>La Chill revival</strong> : laisse toi bercer par les sons pop-rock qui ont façonné notre époque, un voyage zen et mélodique (pop rock)
+          </li>
+          <li>
+            <span class="icon">⚡</span>
+            <strong>L’Énergique</strong> : refais le plein d’ondes positives et recharge les batteries de façon optimale (funk, blues rock et pop rock)
+          </li>
+        </ul>
+        <h2 class="playlist-question highlight">Alors t’es plutôt de quelle humeur ?</h2>
+      </div>
+
+      <div id="contact" class="section">
+        <p><span class="label">Mail :</span> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
+        <p><span class="label">Téléphone :</span> <a href="tel:0614855061">06 14 85 50 61</a></p>
+        <form class="contact-form" action="mailto:perrucheblack@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre e-mail" required>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
     </div>
 
     <audio id="audio-player" src="" preload="auto"></audio>
@@ -103,13 +165,13 @@
         jack: {
           element: document.getElementById("bio-jack"),
           container: document.getElementById("profil-jack"),
-          text: `Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock). Après une longue pause à se chercher il revient à l’évidence : il faut se consacrer à la musique. Une formation de technicien du son studio dans la poche, il enchaîne les projets solos : un 1er EP électro-pop sous le pseudo « Carmen » puis un 2 ème en préparation, cette fois-ci sous « Matheus » et des chansons à textes. Rêveur, appliqué avec une touche de folie, Jack retrouve avec Black Perruche la tangente entre les musiques noires américaines, la pop culture et l’énergie des duos en osmose.`,
+          text: `Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock)...`,
           click: 0
         },
         james: {
           element: document.getElementById("bio-james"),
           container: document.getElementById("profil-james"),
-          text: `C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif et de punk rock comme Nirvana et Sex Pistols. Il élargit son univers au fur et à mesure des rencontres, pour finalement ne pas se donner de limite. Il apprend mais enseigne aussi à de nombreux élèves. S’il multiplie les formations amateurs, il collabore notamment avec Amazigh Kateb. Vous l’aurez compris, la guitare a toujours fait partie intégrante de sa vie. Apaisant, mélodieux et passionné il saura faire vibrer les coeurs comme il fait vibrer les cordes de ses doigts.`,
+          text: `C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif...`,
           click: 0
         }
       };
