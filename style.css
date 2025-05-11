@@ -69,46 +69,70 @@ nav a:hover {
   font-size: 1.2em;
 }
 
-.logo-container {
+.origine-phrase {
   text-align: center;
-  position: relative;
-  margin-bottom: 40px;
+  line-height: 1.8em;
+  margin: 40px auto 30px auto;
+  max-width: 800px;
 }
 
-.logo {
-  width: 240px;
-  height: auto;
+.boutons-bio {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.boutons-bio button {
+  padding: 10px 20px;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.3s;
-  position: relative;
-  z-index: 5;
-  border-radius: 20px;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.logo:hover {
+.boutons-bio button:hover {
+  background-color: #e6c200;
   transform: scale(1.05);
 }
 
-.glow {
-  filter: drop-shadow(0 0 15px gold);
+.origines-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-#overlay-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 64px;
-  color: gold;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  z-index: 10;
-  animation: blink 1s infinite;
+.origine-profil {
+  text-align: center;
+  max-width: 100%;
+  display: none;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
+.origine-profil img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bio-text {
+  color: white;
+  margin-top: 20px;
+  font-size: 1.2em;
+  line-height: 1.9em;
+  text-align: justify;
+  padding: 0 40px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .reseaux-icons {
@@ -234,4 +258,46 @@ nav a:hover {
 
 .contact-form button:hover {
   background-color: #e6c200;
+}
+
+.logo-container {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 240px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 5;
+  border-radius: 20px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.glow {
+  filter: drop-shadow(0 0 15px gold);
+}
+
+#overlay-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: gold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  z-index: 10;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
 }
