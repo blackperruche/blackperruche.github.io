@@ -69,6 +69,65 @@ nav a:hover {
   font-size: 1.2em;
 }
 
+/* ORIGINES */
+.origine-phrase {
+  text-align: center;
+  line-height: 1.8em;
+  margin: 40px auto 30px auto;
+  max-width: 800px;
+}
+
+.origines-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.origine-profil {
+  text-align: center;
+  max-width: 250px;
+}
+
+.origine-profil img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.origine-profil img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+.origine-nom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgba(255, 215, 0, 0.2);
+  color: gold;
+  border: 2px solid gold;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1.4em;
+  margin-top: 15px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.origine-nom:hover {
+  background-color: rgba(255, 215, 0, 0.35);
+}
+
+.origine-nom .icon {
+  font-size: 1.2em;
+}
+
 .logo-container {
   text-align: center;
   position: relative;
@@ -187,45 +246,6 @@ nav a:hover {
   font-size: 1.2em;
 }
 
-/* SECTION ORIGINES */
-.origines-row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.origine-profil {
-  text-align: center;
-  max-width: 250px;
-}
-
-.origine-profil img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-
-.origine-nom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: gold;
-  font-size: 1.8em;
-  margin-top: 15px;
-}
-
-.origine-nom .icon {
-  font-size: 1em;
-  margin: 0;
-}
-
-
 /* SECTION CONTACT */
 #contact p {
   margin: 10px 0;
@@ -274,10 +294,4 @@ nav a:hover {
 
 .contact-form button:hover {
   background-color: #e6c200;
-}
-.origine-phrase {
-  text-align: center;
-  line-height: 1.8em;
-  margin: 40px auto 30px auto;
-  max-width: 800px;
 }
