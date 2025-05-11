@@ -187,6 +187,32 @@ nav a:hover {
   font-size: 1.2em;
 }
 
+/* SECTION ORIGINES */
+.origines-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.origine-profil {
+  text-align: center;
+  max-width: 250px;
+}
+
+.origine-profil img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.origine-nom {
+  color: gold;
+  font-size: 1.8em;
+  margin-top: 15px;
+}
+
 /* SECTION CONTACT */
 #contact p {
   margin: 10px 0;
