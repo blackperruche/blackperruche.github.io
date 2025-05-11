@@ -104,6 +104,11 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
+/* Taille réduite pour Origines */
+#origines h1 {
+  font-size: 1.3em !important;
+}
+
 #overlay-play-button {
   position: absolute;
   top: 50%;
@@ -155,6 +160,12 @@ nav ul li a:hover {
   object-fit: contain;
   transition: transform 0.3s ease;
   display: block;
+}
+
+.reseau-icon img[alt="Facebook"] {
+  object-fit: cover;
+  border-radius: 12px;
+  background: none;
 }
 
 .reseau-icon img:hover {
