@@ -1,130 +1,288 @@
-body {
+* {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #000;
-  color: white;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #000;
+body, html {
+  height: 100%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.background-overlay {
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #FFD700;
+}
+
+.content-wrapper {
+  min-height: 100vh;
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo-container {
   position: relative;
-  display: inline-block;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .logo {
-  width: 100px;
-  filter: drop-shadow(0 0 10px gold);
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
-.play-button {
+#overlay-play-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
-  color: gold;
+  font-size: 80px;
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  z-index: 10;
+  animation: pulse 2s infinite;
+  z-index: 2;
 }
 
-.play-button:hover {
-  transform: translate(-50%, -50%) scale(1.2);
+#overlay-play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
 }
 
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 
 .section {
-  padding: 100px 20px 50px;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  margin-bottom: 60px;
 }
 
-.accroche {
-  font-size: 1.4em;
+.section h1,
+.section h2 {
+  font-size: 2em;
   font-style: italic;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
-.origine-text {
-  font-size: 1.1em;
-  font-style: italic;
+.highlight {
+  color: #FFD700;
+}
+
+.small {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.icon {
+  font-size: 1.3em;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
 .reseaux-icons {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-.reseaux-icons img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(1.2);
+.reseau-icon {
+  opacity: 0;
+  animation: fadeInLeft 0.6s forwards;
+}
+
+.reseau-icon:nth-child(1) { animation-delay: 0s; }
+.reseau-icon:nth-child(2) { animation-delay: 0.3s; }
+.reseau-icon:nth-child(3) { animation-delay: 0.6s; }
+.reseau-icon:nth-child(4) { animation-delay: 0.9s; }
+
+.reseau-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   transition: transform 0.3s ease;
+  display: block;
 }
 
-.reseaux-icons img:hover {
+.reseau-icon img[alt="Facebook"] {
+  object-fit: cover;
+  border-radius: 12px;
+  background: none;
+}
+
+.reseau-icon img:hover {
   transform: scale(1.2);
 }
 
-.concert-dore {
-  color: gold;
-  font-weight: bold;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.note {
-  font-size: 1.5em;
-  margin-right: 5px;
+.concert-infos {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-top: 15px;
+  color: #FFD700;
 }
 
-form {
-  max-width: 400px;
-  margin: 0 auto;
+.concert-infos span {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.playlist-title,
+.playlist-question {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.playlist-list li {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }
 
-label {
-  font-weight: bold;
-  color: white;
+.playlist-list li strong {
+  white-space: nowrap;
+  margin-right: 5px;
 }
 
-input, textarea {
-  padding: 10px;
+.playlist-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 3px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
   border: none;
   border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Quicksand', sans-serif;
 }
 
-button {
-  padding: 10px;
-  background-color: gold;
+.contact-form button {
+  padding: 12px 24px;
+  background-color: #FFD700;
   color: black;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #e5c100;
+.contact-form button:hover {
+  background-color: #e6c200;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
 }
