@@ -211,10 +211,20 @@ nav a:hover {
 
 
 .origine-nom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   color: gold;
   font-size: 1.8em;
   margin-top: 15px;
 }
+
+.origine-nom .icon {
+  font-size: 1em;
+  margin: 0;
+}
+
 
 /* SECTION CONTACT */
 #contact p {
