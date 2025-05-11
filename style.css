@@ -24,14 +24,14 @@ nav ul {
 }
 
 nav li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px; /* Agrandissement des onglets */
   transition: color 0.3s;
 }
 
@@ -47,7 +47,7 @@ nav a:hover {
 
 .content-wrapper {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 80px auto 0 auto; /* centré verticalement */
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
@@ -76,7 +76,7 @@ nav a:hover {
 }
 
 .logo {
-  width: 120px;
+  width: 180px; /* Agrandi */
   height: auto;
   cursor: pointer;
   transition: transform 0.3s;
