@@ -70,15 +70,32 @@ nav ul li a:hover {
   border-radius: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
-.logo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700;
+#overlay-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  z-index: 2;
 }
 
-.glow {
-  box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700;
+#overlay-play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 
 .section {
@@ -101,33 +118,21 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-/* Mises en forme personnalisées */
 .highlight {
   color: #FFD700;
 }
 
-.texte-origine {
+.small {
   font-size: 1em;
   line-height: 1.4;
-  color: #FFD700;
-}
-
-#reseaux h2 {
-  color: #FFD700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 1.6em;
 }
 
 .icon {
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin-left: 8px;
   vertical-align: middle;
 }
 
-/* Réseaux */
 .reseaux-icons {
   display: flex;
   justify-content: center;
@@ -176,26 +181,54 @@ nav ul li a:hover {
   }
 }
 
-/* Formulaire de contact */
-#contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#contact p {
-  margin: 10px 0;
-  font-size: 1.1em;
-  text-align: center;
-}
-
-#contact a {
+.concert-infos {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-top: 15px;
   color: #FFD700;
-  text-decoration: none;
 }
 
-#contact a:hover {
-  text-decoration: underline;
+.concert-infos span {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.playlist-title,
+.playlist-question {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.playlist-list li {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.playlist-list li strong {
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.playlist-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 3px;
 }
 
 .contact-form {
@@ -231,4 +264,25 @@ nav ul li a:hover {
 
 .contact-form button:hover {
   background-color: #e6c200;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
 }
