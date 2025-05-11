@@ -104,8 +104,8 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-/* Taille réduite pour Origines */
-#origines h1 {
+/* Réduction de taille pour le texte de la section Origines */
+.texte-origine {
   font-size: 1em !important;
   line-height: 1.4;
 }
