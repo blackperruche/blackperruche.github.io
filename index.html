@@ -32,102 +32,118 @@
       </div>
 
       <div id="origines" class="section">
-        <div class="bios">
-          <div class="bio-box" onclick="toggleBio('jack')">
-            <img src="jack.jpg" alt="Photo de Jack">
-            <h2 class="bio-name">Jack</h2>
-            <p id="bio-jack" class="bio-text"></p>
-          </div>
-          <div class="bio-box" onclick="toggleBio('james')">
-            <img src="james.jpg" alt="Photo de James">
-            <h2 class="bio-name">James</h2>
-            <p id="bio-james" class="bio-text"></p>
-          </div>
+        <h1 class="highlight small"><em>“Maître Perruche sur un arbre avec 2 mecs perchés, chantait dans son bec un air à la tangente de la musique noire américaine et de la pop culture.”</em></h1>
+      </div>
+
+      <div id="reseaux" class="section">
+        <h2 class="highlight"><em>Viens nous écouter sur ton réseau préféré</em><span class="icon">🎶</span></h2>
+        <div class="reseaux-icons">
+          <a href="https://www.instagram.com/blackperruche" target="_blank" class="reseau-icon">
+            <img src="instagram.png" alt="Icône Instagram">
+          </a>
+          <a href="https://www.tiktok.com/@black.perruche" target="_blank" class="reseau-icon">
+            <img src="tiktok.png" alt="Icône TikTok">
+          </a>
+          <a href="https://www.youtube.com/@BlackPerruche" target="_blank" class="reseau-icon">
+            <img src="youtube.png" alt="Icône YouTube">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576150134806" target="_blank" class="reseau-icon">
+            <img src="facebook.png" alt="Icône Facebook">
+          </a>
         </div>
       </div>
 
-      <!-- ... (reste inchangé : Réseaux, Concerts, Playlists, Contact, Audio) -->
+      <div id="concerts" class="section">
+        <h2 class="highlight"><em>Viens nous voir jouer le...</em></h2>
+        <p class="concert-infos">
+          <span>28 Juin</span> · 
+          <span>19h</span> · 
+          <span>à La Friche en Herbe</span> · 
+          <span>15 Rue Emile Zola, 39400 Hauts-de-Bienne</span>
+        </p>
+      </div>
 
-      <audio id="audio-player" src="" preload="auto"></audio>
+      <div id="playlists" class="section">
+        <h2 class="playlist-title highlight">Choisis toi-même ton concert selon le mood recherché :</h2>
+        <ul class="playlist-list">
+          <li>
+            <img src="logo.png" alt="Logo Black Perruche" class="playlist-logo">
+            <strong>La Black Perruche</strong> : un style virevoltant qui vous met les plumes, pour un moment original et authentique (pop rock, folk, blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🔥</span>
+            <strong>La groove un max</strong> : la vibe afro-américaine réveille le danseur fou qui est en vous (blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🌙</span>
+            <strong>La Chill revival</strong> : laisse toi bercer par les sons pop-rock qui ont façonné notre époque, un voyage zen et mélodique (pop rock)
+          </li>
+          <li>
+            <span class="icon">⚡</span>
+            <strong>L’Énergique</strong> : refais le plein d’ondes positives et recharge les batteries de façon optimale (funk, blues rock et pop rock)
+          </li>
+        </ul>
+        <h2 class="playlist-question highlight">Alors t’es plutôt de quelle humeur ?</h2>
+      </div>
 
-      <script>
-        const playlist = [...Array(10)].map((_, i) => ({ file: `audio${i + 1}.mp3` }));
-        let currentTrack = 0;
-        const audio = document.getElementById('audio-player');
-        const playButton = document.getElementById('overlay-play-button');
+      <div id="contact" class="section">
+        <p><span class="label">Mail :</span> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
+        <p><span class="label">Téléphone :</span> <a href="tel:0614855061">06 14 85 50 61</a></p>
+        <form class="contact-form" action="mailto:perrucheblack@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre e-mail" required>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
 
-        function playCurrentTrack() {
-          audio.src = playlist[currentTrack].file;
-          audio.play().then(() => {
-            playButton.style.display = "none";
-          }).catch(() => {
-            playButton.style.display = "block";
-          });
-          audio.onended = () => {
-            currentTrack = (currentTrack + 1) % playlist.length;
-            playCurrentTrack();
-          };
-        }
+    <audio id="audio-player" src="" preload="auto"></audio>
 
-        function startPlayback() {
-          playCurrentTrack();
-        }
+    <script>
+      const playlist = [...Array(10)].map((_, i) => ({ file: `audio${i + 1}.mp3` }));
+      let currentTrack = 0;
+      const audio = document.getElementById('audio-player');
+      const playButton = document.getElementById('overlay-play-button');
 
-        function handleClick(event) {
-          event.stopPropagation();
+      function playCurrentTrack() {
+        audio.src = playlist[currentTrack].file;
+        audio.play().then(() => {
+          playButton.style.display = "none";
+        }).catch(() => {
+          playButton.style.display = "block";
+        });
+        audio.onended = () => {
           currentTrack = (currentTrack + 1) % playlist.length;
           playCurrentTrack();
-        }
-
-        function togglePlayPause(event) {
-          event.stopPropagation();
-          audio.paused ? audio.play() : audio.pause();
-        }
-
-        function showSection(id) {
-          document.querySelectorAll('.section').forEach(section => {
-            section.style.display = 'none';
-          });
-          document.getElementById(id).style.display = 'block';
-        }
-
-        window.onload = () => {
-          showSection('accueil');
         };
+      }
 
-        // BIO ANIMATION
-        const bios = {
-          jack: {
-            element: document.getElementById("bio-jack"),
-            text: `Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock). Après une longue pause à se chercher il revient à l’évidence : il faut se consacrer à la musique. Une formation de technicien du son studio dans la poche, il enchaîne les projets solos : un 1er EP électro-pop sous le pseudo « Carmen » puis un 2 ème en préparation, cette fois-ci sous « Matheus » et des chansons à textes. Rêveur, appliqué avec une touche de folie, Jack retrouve avec Black Perruche la tangente entre les musiques noires américaines, la pop culture et l’énergie des duos en osmose.`,
-            click: 0
-          },
-          james: {
-            element: document.getElementById("bio-james"),
-            text: `C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif et de punk rock comme Nirvana et Sex Pistols. Il élargit son univers au fur et à mesure des rencontres, pour finalement ne pas se donner de limite. Il apprend mais enseigne aussi à de nombreux élèves. S’il multiplie les formations amateurs, il collabore notamment avec Amazigh Kateb. Vous l’aurez compris, la guitare a toujours fait partie intégrante de sa vie. Apaisant, mélodieux et passionné il saura faire vibrer les coeurs comme il fait vibrer les cordes de ses doigts.`,
-            click: 0
-          }
-        };
+      function startPlayback() {
+        playCurrentTrack();
+      }
 
-        function typeText(bio, index = 0) {
-          if (index <= bio.text.length) {
-            bio.element.innerText = bio.text.substring(0, index);
-            setTimeout(() => typeText(bio, index + 1), 20);
-          }
-        }
+      function handleClick(event) {
+        event.stopPropagation();
+        currentTrack = (currentTrack + 1) % playlist.length;
+        playCurrentTrack();
+      }
 
-        function toggleBio(name) {
-          const bio = bios[name];
-          bio.click++;
-          if (bio.click % 3 === 1) {
-            bio.element.innerText = "";
-            typeText(bio);
-          } else if (bio.click % 3 === 2) {
-            bio.element.innerText = "";
-          } else {
-            bio.element.innerText = bio.text;
-          }
-        }
-      </script>
+      function togglePlayPause(event) {
+        event.stopPropagation();
+        audio.paused ? audio.play() : audio.pause();
+      }
+
+      function showSection(id) {
+        document.querySelectorAll('.section').forEach(section => {
+          section.style.display = 'none';
+        });
+        document.getElementById(id).style.display = 'block';
+      }
+
+      window.onload = () => {
+        showSection('accueil');
+      };
+    </script>
 </body>
 </html>
