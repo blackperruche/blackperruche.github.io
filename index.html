@@ -110,10 +110,13 @@
       <div id="contact" class="section">
         <p><span class="label">Mail :</span> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
         <p><span class="label">Téléphone :</span> <a href="tel:0614855061">06 14 85 50 61</a></p>
-        <form class="contact-form" action="mailto:perrucheblack@gmail.com" method="POST" enctype="text/plain">
+
+        <form action="https://formspree.io/f/myzwdbdo" method="POST" class="contact-form">
           <input type="text" name="nom" placeholder="Votre nom" required>
           <input type="email" name="email" placeholder="Votre e-mail" required>
           <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_next" value="https://blackperruche.github.io/merci.html">
           <button type="submit">Envoyer</button>
         </form>
       </div>
