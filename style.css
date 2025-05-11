@@ -31,7 +31,7 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 20px; /* Agrandissement des onglets */
+  font-size: 20px;
   transition: color 0.3s;
 }
 
@@ -47,7 +47,7 @@ nav a:hover {
 
 .content-wrapper {
   max-width: 1000px;
-  margin: 80px auto 0 auto; /* centré verticalement */
+  margin: 80px auto 0 auto;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
@@ -76,12 +76,13 @@ nav a:hover {
 }
 
 .logo {
-  width: 180px; /* Agrandi */
+  width: 240px;
   height: auto;
   cursor: pointer;
   transition: transform 0.3s;
   position: relative;
   z-index: 5;
+  border-radius: 20px;
 }
 
 .logo:hover {
@@ -97,15 +98,17 @@ nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 48px;
+  font-size: 64px;
   color: gold;
   cursor: pointer;
   transition: opacity 0.3s;
   z-index: 10;
+  animation: blink 1s infinite;
 }
 
-#overlay-play-button:hover {
-  opacity: 0.8;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
 }
 
 .reseaux-icons {
