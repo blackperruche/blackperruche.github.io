@@ -135,6 +135,136 @@ nav a:hover {
   margin-right: auto;
 }
 
+/* RÉSEAUX */
+.reseaux-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.reseau-icon {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition 0.6s ease-out forwards;
+}
+
+.reseau-icon:nth-child(1) { animation-delay: 0.2s; }
+.reseau-icon:nth-child(2) { animation-delay: 0.4s; }
+.reseau-icon:nth-child(3) { animation-delay: 0.6s; }
+.reseau-icon:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes apparition {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reseau-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: brightness(1.1);
+}
+
+.reseau-icon img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+/* CONCERTS */
+.concert-infos {
+  color: white;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* PLAYLISTS */
+.playlist-title,
+.playlist-question {
+  margin-top: 30px;
+}
+
+.playlist-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.playlist-list li {
+  margin-bottom: 25px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+}
+
+.playlist-logo {
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* CONTACT */
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.label {
+  color: gold;
+  font-weight: bold;
+}
+
+#contact a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: gold;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e6c200;
+}
+
+/* LOGO + PLAY */
 .logo-container {
   text-align: center;
   position: relative;
