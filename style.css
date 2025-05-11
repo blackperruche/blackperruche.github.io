@@ -290,3 +290,48 @@ nav ul li a:hover {
   text-align: left;
   max-width: 800px;
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e6c200;
+}
+
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+#contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
