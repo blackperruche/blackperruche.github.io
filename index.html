@@ -3,109 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <title>Black Perruche</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <header>
-    <div class="logo-container" id="logo">
-      <div class="play-button" id="play-button">▶</div>
-      <img src="logo.png" alt="Logo Black Perruche" class="logo">
-    </div>
+  <div class="background-overlay">
     <nav>
-      <a href="#accueil">Accueil</a>
-      <a href="#origines">Origines</a>
-      <a href="#reseaux">Réseaux</a>
-      <a href="#concerts">Concerts</a>
-      <a href="#playlist">Playlist</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#" onclick="showSection('accueil')">Accueil</a></li>
+        <li><a href="#" onclick="showSection('origines')">Origines</a></li>
+        <li><a href="#" onclick="showSection('reseaux')">Réseaux</a></li>
+        <li><a href="#" onclick="showSection('concerts')">Concerts</a></li>
+        <li><a href="#" onclick="showSection('playlist')">Playlist</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
     </nav>
-  </header>
 
-  <section id="accueil" class="section">
-    <p class="accroche">Maître Perruche sur un arbre avec 2 mecs perchés,<br>Chantait dans son bec un air à la tangente de la musique noire américaine et de la pop culture.</p>
-  </section>
+    <div class="content-wrapper">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo Black Perruche" class="logo glow"
+             id="logo" ondblclick="togglePlayPause(event)" onclick="handleClick(event)">
+        <div id="overlay-play-button" onclick="startPlayback()">▶</div>
+      </div>
 
-  <section id="origines" class="section">
-    <p class="origine-text">"Un style virevoltant qui vous met les plumes"</p>
-  </section>
+      <div id="accueil" class="section">
+        <h1 class="highlight"><em>“Un style virevoltant qui vous met les plumes”</em></h1>
+      </div>
 
-  <section id="reseaux" class="section">
-    <p><em>Viens nous écouter sur ton réseau préféré</em> 🎶</p>
-    <div class="reseaux-icons">
-      <a href="https://www.instagram.com/blackperruche" target="_blank"><img src="insta.png" alt="Instagram"></a>
-      <a href="https://www.tiktok.com/@black.perruche" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
-      <a href="https://www.youtube.com/@BlackPerruche" target="_blank"><img src="youtube.png" alt="YouTube"></a>
-      <a href="https://www.facebook.com/profile.php?id=61576150134806" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+      <div id="origines" class="section">
+        <h1 class="highlight small"><em>“Maître Perruche sur un arbre avec 2 mecs perchés, chantait dans son bec un air à la tangente de la musique noire américaine et de la pop culture.”</em></h1>
+      </div>
+
+      <div id="reseaux" class="section">
+        <h2 class="highlight"><em>Viens nous écouter sur ton réseau préféré</em><span class="icon">🎶</span></h2>
+        <div class="reseaux-icons">
+          <a href="https://www.instagram.com/blackperruche" target="_blank" class="reseau-icon">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.tiktok.com/@black.perruche" target="_blank" class="reseau-icon">
+            <img src="tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://www.youtube.com/@BlackPerruche" target="_blank" class="reseau-icon">
+            <img src="youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576150134806" target="_blank" class="reseau-icon">
+            <img src="facebook.png" alt="Facebook">
+          </a>
+        </div>
+      </div>
+
+      <div id="concerts" class="section">
+        <h2 class="highlight"><em>Viens nous voir jouer le...</em></h2>
+        <p class="concert-infos">
+          <span>28 Juin</span> · 
+          <span>19h</span> · 
+          <span>à La Friche en Herbe</span> · 
+          <span>15 Rue Emile Zola, 39400 Hauts-de-Bienne</span>
+        </p>
+      </div>
+
+      <div id="playlist" class="section">
+        <h2 class="playlist-title highlight">Choisis toi-même ton concert selon le mood recherché :</h2>
+        <ul class="playlist-list">
+          <li>
+            <img src="logo.png" alt="Logo Black Perruche" class="playlist-logo">
+            <strong>La Black Perruche</strong> : un style virevoltant qui vous met les plumes, pour un moment original et authentique (pop rock, folk, blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🔥</span>
+            <strong>La groove un max</strong> : la vibe afro-américaine réveille le danseur fou qui est en vous (blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🌙</span>
+            <strong>La Chill revival</strong> : laisse toi bercer par les sons pop-rock qui ont façonné notre époque, un voyage zen et mélodique (pop rock)
+          </li>
+          <li>
+            <span class="icon">⚡</span>
+            <strong>L’Énergique</strong> : refais le plein d’ondes positives et recharge les batteries de façon optimale (funk, blues rock et pop rock)
+          </li>
+        </ul>
+        <h2 class="playlist-question highlight">Alors t’es plutôt de quelle humeur ?</h2>
+      </div>
+
+      <div id="contact" class="section">
+        <h2>Contact</h2>
+        <p><strong>Mail :</strong> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> <a href="tel:0614855061">06 14 85 50 61</a></p>
+        <form class="contact-form" action="mailto:perrucheblack@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre e-mail" required>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
     </div>
-  </section>
 
-  <section id="concerts" class="section">
-    <p class="concert-dore">Viens nous voir jouer le ...</p>
-    <p>Adresse : ...</p>
-    <p>Date : ...</p>
-    <p class="concert-dore">Choisis toi-même ton concert selon le mood recherché :</p>
-    <p class="concert-dore">Alors t’es plutôt de quelle humeur ?</p>
-  </section>
+    <audio id="audio-player" src="" preload="auto"></audio>
 
-  <section id="playlist" class="section">
-    <p><span class="note">🎵</span> La Black Perruche : un style virevoltant qui vous met les plumes, pour un moment original et authentique (pop rock, folk, blues, soul, funk et R’N’B)</p>
-  </section>
+    <script>
+      const playlist = [...Array(10)].map((_, i) => ({ file: `audio${i + 1}.mp3` }));
+      let currentTrack = 0;
+      const audio = document.getElementById('audio-player');
+      const playButton = document.getElementById('overlay-play-button');
 
-  <section id="contact" class="section">
-    <form>
-      <label for="email">Mail :</label>
-      <input type="email" id="email" name="email" placeholder="perrucheblack@gmail.com" required>
+      function playCurrentTrack() {
+        audio.src = playlist[currentTrack].file;
+        audio.play().then(() => {
+          playButton.style.display = "none";
+        }).catch(() => {
+          playButton.style.display = "block";
+        });
+        audio.onended = () => {
+          currentTrack = (currentTrack + 1) % playlist.length;
+          playCurrentTrack();
+        };
+      }
 
-      <label for="tel">Téléphone :</label>
-      <input type="tel" id="tel" name="tel" placeholder="0625855061" required>
+      function startPlayback() {
+        playCurrentTrack();
+      }
 
-      <label for="message">Message :</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      function handleClick(event) {
+        event.stopPropagation();
+        currentTrack = (currentTrack + 1) % playlist.length;
+        playCurrentTrack();
+      }
 
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+      function togglePlayPause(event) {
+        event.stopPropagation();
+        audio.paused ? audio.play() : audio.pause();
+      }
 
-  <audio id="player" src="audio1.mp3"></audio>
-  <script>
-    const logo = document.getElementById('logo');
-    const playBtn = document.getElementById('play-button');
-    const player = document.getElementById('player');
-    const tracks = ['audio1.mp3', 'audio2.mp3', 'audio3.mp3', 'audio4.mp3', 'audio5.mp3', 'audio6.mp3', 'audio7.mp3', 'audio8.mp3', 'audio9.mp3', 'audio10.mp3'];
-    let index = 0;
-    let clickCount = 0;
-    let clickTimer;
+      function showSection(id) {
+        document.querySelectorAll('.section').forEach(section => {
+          section.style.display = 'none';
+        });
+        document.getElementById(id).style.display = 'block';
+      }
 
-    logo.addEventListener('click', () => {
-      clickCount++;
-      clearTimeout(clickTimer);
-      clickTimer = setTimeout(() => {
-        if (clickCount === 1) {
-          player.paused ? player.play() : player.pause();
-        } else if (clickCount === 2) {
-          index = (index + 1) % tracks.length;
-          player.src = tracks[index];
-          player.play();
-        }
-        clickCount = 0;
-      }, 300);
-    });
-
-    player.addEventListener('ended', () => {
-      index = (index + 1) % tracks.length;
-      player.src = tracks[index];
-      player.play();
-    });
-
-    playBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-
-    playBtn.addEventListener('click', () => {
-      playBtn.style.display = 'none';
-      player.play();
-    });
-  </script>
+      window.onload = () => {
+        showSection('accueil');
+      };
+    </script>
 </body>
 </html>
