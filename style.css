@@ -335,3 +335,58 @@ nav ul li a:hover {
 #contact a:hover {
   text-decoration: underline;
 }
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#contact a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.contact-form button {
+  padding: 12px 24px;
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e6c200;
+}
