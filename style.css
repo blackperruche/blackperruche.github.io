@@ -43,13 +43,14 @@ nav a:hover {
   padding-top: 60px;
   min-height: 100vh;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .content-wrapper {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); /* voile noir léger derrière les contenus */
+  border-radius: 20px;
 }
 
 .section {
@@ -242,6 +243,6 @@ nav a:hover {
     text-align: center;
   }
   .logo {
-    width: 90px;
+    width: 100px; /* taille correcte sur mobile */
   }
 }
