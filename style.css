@@ -111,7 +111,6 @@ nav a:hover {
   50% { opacity: 0.2; }
 }
 
-/* SECTION RÉSEAUX */
 .reseaux-icons {
   display: flex;
   justify-content: center;
@@ -150,14 +149,12 @@ nav a:hover {
   filter: brightness(1.5);
 }
 
-/* SECTION CONCERTS */
 .concert-infos {
   color: white;
   font-size: 1.1em;
   margin-top: 10px;
 }
 
-/* SECTION PLAYLISTS */
 .playlist-title,
 .playlist-question {
   margin-top: 30px;
@@ -190,7 +187,6 @@ nav a:hover {
   font-size: 1.2em;
 }
 
-/* SECTION CONTACT */
 #contact p {
   margin: 10px 0;
   font-size: 1.1em;
