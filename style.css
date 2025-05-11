@@ -256,11 +256,10 @@ nav ul li a:hover {
 }
 
 .playlist-logo {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   margin-right: 10px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-top: 4px;
+  border-radius: 6px;
+  margin-top: 2px;
 }
-
