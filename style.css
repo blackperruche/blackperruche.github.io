@@ -89,6 +89,7 @@ nav a:hover {
   text-align: center;
   max-width: 250px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .origine-profil img {
@@ -136,6 +137,17 @@ nav a:hover {
   margin: 0;
 }
 
+.bio-text {
+  color: white;
+  margin-top: 15px;
+  font-size: 1em;
+  text-align: justify;
+  line-height: 1.6em;
+  max-width: 100%;
+  padding: 0 10px;
+}
+
+/* LOGO + PLAY */
 .logo-container {
   text-align: center;
   position: relative;
@@ -178,6 +190,7 @@ nav a:hover {
   50% { opacity: 0.2; }
 }
 
+/* RÉSEAUX */
 .reseaux-icons {
   display: flex;
   justify-content: center;
@@ -216,12 +229,14 @@ nav a:hover {
   filter: brightness(1.5);
 }
 
+/* CONCERTS */
 .concert-infos {
   color: white;
   font-size: 1.1em;
   margin-top: 10px;
 }
 
+/* PLAYLISTS */
 .playlist-title,
 .playlist-question {
   margin-top: 30px;
@@ -254,7 +269,7 @@ nav a:hover {
   font-size: 1.2em;
 }
 
-/* SECTION CONTACT */
+/* CONTACT */
 #contact p {
   margin: 10px 0;
   font-size: 1.1em;
