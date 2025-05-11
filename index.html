@@ -88,8 +88,20 @@
   <h2 class="playlist-question">Alors t’es plutôt de quelle humeur ?</h2>
 </div>
 
-      <div id="contact" class="section"><h2>Contact</h2></div>
-    </div>
+     <div id="contact" class="section">
+  <h2>Contact</h2>
+
+  <p><strong>Mail :</strong> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
+  <p><strong>Téléphone :</strong> <a href="tel:0614855061">06 14 85 50 61</a></p>
+
+  <form class="contact-form" action="mailto:perrucheblack@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre e-mail" required>
+    <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
 
     <audio id="audio-player" src="" preload="auto"></audio>
   </div>
