@@ -13,6 +13,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px 0;
   z-index: 1000;
+  overflow-x: hidden;
 }
 
 nav ul {
@@ -33,6 +34,7 @@ nav a {
   font-weight: 600;
   font-size: 20px;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -51,12 +53,16 @@ nav a:hover {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .section {
   display: none;
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .highlight {
@@ -310,18 +316,32 @@ nav a:hover {
 
 /* ----------- VERSION MOBILE ------------ */
 @media (max-width: 768px) {
+  .background-overlay {
+    padding-top: 80px;
+  }
+
   .content-wrapper {
     margin: 60px 10px;
     padding: 15px;
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0 10px;
+    scrollbar-width: none;
+  }
+
+  nav ul::-webkit-scrollbar {
+    display: none;
   }
 
   nav li {
-    margin: 10px 0;
+    flex: 0 0 auto;
+    margin: 0 15px;
   }
 
   .highlight {
