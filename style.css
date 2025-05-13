@@ -51,12 +51,16 @@ nav a:hover {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .section {
   display: none;
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .highlight {
@@ -310,6 +314,10 @@ nav a:hover {
 
 /* ----------- VERSION MOBILE ------------ */
 @media (max-width: 768px) {
+  .background-overlay {
+    padding-top: 80px;
+  }
+
   .content-wrapper {
     margin: 60px 10px;
     padding: 15px;
