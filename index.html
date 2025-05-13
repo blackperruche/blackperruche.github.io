@@ -8,14 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-  <!-- Animation d’intro du logo -->
-  <div id="logo-animation">
-    <img src="logo.png" alt="Logo Black Perruche" id="animated-logo">
-  </div>
-
-  <!-- Contenu principal du site -->
-  <div class="background-overlay" id="site-content" style="display: none;">
+  <div class="background-overlay">
     <nav>
       <ul>
         <li><a href="#" onclick="showSection('accueil')">Accueil</a></li>
@@ -130,23 +123,8 @@
     </div>
 
     <audio id="audio-player" src="" preload="auto"></audio>
-
     <script>
-      // Intro logo
-      window.onload = () => {
-        const animatedLogo = document.getElementById('animated-logo');
-        setTimeout(() => {
-          animatedLogo.classList.add('logo-landing');
-        }, 1000);
-
-        setTimeout(() => {
-          document.getElementById('logo-animation').style.display = 'none';
-          document.getElementById('site-content').style.display = 'block';
-          showSection('accueil');
-        }, 3000);
-      };
-
-      const playlist = [...Array(10)].map((_, i) => ({ file: `audio${i + 1}.mp3` }));
+      const playlist = [...Array(10)].map((_, i) => ({ file: audio${i + 1}.mp3 }));
       let currentTrack = 0;
       const audio = document.getElementById('audio-player');
       const playButton = document.getElementById('overlay-play-button');
@@ -180,17 +158,21 @@
         document.getElementById(id).style.display = 'block';
       }
 
+      window.onload = () => {
+        showSection('accueil');
+      };
+
       const bios = {
         jack: {
           element: document.getElementById("bio-jack"),
           container: document.getElementById("profil-jack"),
-          text: `Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock)...`,
+          text: Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock). Après une longue pause à se chercher il revient à l’évidence : il faut se consacrer à la musique. Une formation de technicien du son studio dans la poche, il enchaîne les projets solos : un 1er EP électro-pop sous le pseudo « Carmen » puis un 2 ème en préparation, cette fois-ci sous « Matheus » et des chansons à textes. Rêveur, appliqué avec une touche de folie, Jack retrouve avec Black Perruche l’énergie des duos en osmose.,
           click: 0
         },
         james: {
           element: document.getElementById("bio-james"),
           container: document.getElementById("profil-james"),
-          text: `C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique...`,
+          text: C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif et de punk rock comme Nirvana et Sex Pistols. Il élargit son univers au fur et à mesure des rencontres, pour finalement ne pas se donner de limite. Il apprend mais enseigne aussi à de nombreux élèves. S’il multiplie les formations amateurs, il collabore notamment avec Amazigh Kateb. Vous l’aurez compris, la guitare a toujours fait partie intégrante de sa vie. Apaisant, mélodieux et passionné il saura faire vibrer les coeurs comme il fait vibrer les cordes de ses doigts.,
           click: 0
         }
       };
@@ -220,6 +202,6 @@
         }
       }
     </script>
-
+  </div>
 </body>
 </html>
