@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reggae Surprise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+  <title>Black Perruche</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="audio-wrapper">
-    <img src="logo-reggae-surprise.png" alt="Logo" id="logo" />
+    <img src="logo.png" alt="Logo Black Perruche" id="logo" />
     <div id="play-button">▶</div>
   </div>
 
@@ -18,34 +18,52 @@
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#origines">Origines</a></li>
       <li><a href="#reseaux">Réseaux</a></li>
+      <li><a href="#concerts">Concerts</a></li>
+      <li><a href="#playlists">Playlists</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <main>
     <section id="accueil" class="section active">
-      <h1>Bienvenue chez Reggae Surprise</h1>
+      <h1>Black Perruche</h1>
+      <p>Un duo perché. Deux voix. Une énergie soul-pop.</p>
     </section>
 
     <section id="origines" class="section">
       <h2>Origines</h2>
-      <p>Ils voulaient juste faire une répète... Résultat : un groupe, du groove, et une grosse surprise.</p>
+      <div class="bios">
+        <div class="bio-block">
+          <img src="jack.jpg" alt="Jack" class="bio-img" onclick="toggleBio('jack')">
+          <button onclick="toggleBio('jack')">Voir Jack</button>
+          <div id="bio-jack" class="bio-text"></div>
+        </div>
+        <div class="bio-block">
+          <img src="james.jpg" alt="James" class="bio-img" onclick="toggleBio('james')">
+          <button onclick="toggleBio('james')">Voir James</button>
+          <div id="bio-james" class="bio-text"></div>
+        </div>
+      </div>
     </section>
 
     <section id="reseaux" class="section">
       <h2>Réseaux</h2>
       <p>Viens nous écouter sur ton réseau préféré 🎶</p>
       <div class="reseaux">
-        <a href="https://www.instagram.com/reggaesurpriseoff/" target="_blank">
-          <img src="instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.youtube.com/@ReggaeSurprise" target="_blank">
-          <img src="youtube.png" alt="YouTube">
-        </a>
-        <a href="#" target="_blank">
-          <img src="facebook.png" alt="Facebook">
-        </a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
       </div>
+    </section>
+
+    <section id="concerts" class="section">
+      <h2>Concerts</h2>
+      <p>Retrouve-nous bientôt sur scène !</p>
+    </section>
+
+    <section id="playlists" class="section">
+      <h2>Playlists</h2>
+      <p>Nos morceaux préférés, à écouter sans modération.</p>
     </section>
 
     <section id="contact" class="section">
@@ -67,24 +85,71 @@
 
   <audio id="audio-player" src="audio1.mp3"></audio>
   <script>
-    const playButton = document.getElementById('play-button');
     const audio = document.getElementById('audio-player');
+    const playButton = document.getElementById('play-button');
+    const logo = document.getElementById('logo');
+    let trackNumber = 1;
     let clickCount = 0;
     let timer;
+
+    function playTrack(number) {
+      audio.src = 'audio' + number + '.mp3';
+      audio.play();
+    }
 
     playButton.addEventListener('click', () => {
       clickCount++;
       clearTimeout(timer);
       timer = setTimeout(() => {
         if (clickCount === 1) {
-          audio.paused ? audio.play() : audio.pause();
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
         } else if (clickCount === 2) {
-          audio.currentTime = 0;
-          audio.play();
+          trackNumber = trackNumber % 10 + 1;
+          playTrack(trackNumber);
         }
         clickCount = 0;
       }, 300);
     });
+
+    // Bio animation JS
+    const bios = {
+      jack: "Jack est un feu follet de la soul, passionné par la scène et les improvisations déjantées.",
+      james: "James est un explorateur du groove, toujours prêt à transformer chaque note en aventure."
+    };
+
+    const states = {
+      jack: 0,
+      james: 0
+    };
+
+    function toggleBio(name) {
+      const element = document.getElementById(`bio-${name}`);
+      const state = states[name];
+      if (state === 0) {
+        element.innerHTML = "";
+        let words = bios[name].split(" ");
+        let i = 0;
+        let interval = setInterval(() => {
+          if (i < words.length) {
+            element.innerHTML += words[i] + " ";
+            i++;
+          } else {
+            clearInterval(interval);
+          }
+        }, 100);
+        states[name] = 1;
+      } else if (state === 1) {
+        element.innerHTML = "";
+        states[name] = 2;
+      } else {
+        element.innerHTML = bios[name];
+        states[name] = 0;
+      }
+    }
   </script>
 </body>
 </html>
