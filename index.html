@@ -8,17 +8,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="logo-reggae-surprise.png" alt="Logo Reggae Surprise" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#origines">Origines</a></li>
-        <li><a href="#reseaux">Réseaux</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="audio-wrapper">
+    <img src="logo-reggae-surprise.png" alt="Logo" id="logo" />
+    <div id="play-button">▶</div>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#origines">Origines</a></li>
+      <li><a href="#reseaux">Réseaux</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section id="accueil" class="section active">
@@ -62,5 +64,27 @@
       </form>
     </section>
   </main>
+
+  <audio id="audio-player" src="audio1.mp3"></audio>
+  <script>
+    const playButton = document.getElementById('play-button');
+    const audio = document.getElementById('audio-player');
+    let clickCount = 0;
+    let timer;
+
+    playButton.addEventListener('click', () => {
+      clickCount++;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (clickCount === 1) {
+          audio.paused ? audio.play() : audio.pause();
+        } else if (clickCount === 2) {
+          audio.currentTime = 0;
+          audio.play();
+        }
+        clickCount = 0;
+      }, 300);
+    });
+  </script>
 </body>
 </html>
