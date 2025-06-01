@@ -1,155 +1,212 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Black Perruche</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="audio-wrapper">
-    <img src="logo.png" alt="Logo Black Perruche" id="logo" />
-    <div id="play-button">▶</div>
-  </div>
+  <div class="background-overlay">
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('accueil')">Accueil</a></li>
+        <li><a href="#" onclick="showSection('origines')">Origines</a></li>
+        <li><a href="#" onclick="showSection('reseaux')">Réseaux</a></li>
+        <li><a href="#" onclick="showSection('concerts')">Concerts</a></li>
+        <li><a href="#" onclick="showSection('playlists')">Playlists</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
 
-  <nav>
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#origines">Origines</a></li>
-      <li><a href="#reseaux">Réseaux</a></li>
-      <li><a href="#concerts">Concerts</a></li>
-      <li><a href="#playlists">Playlists</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="content-wrapper">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo Black Perruche" class="logo glow" id="logo" ondblclick="togglePlayPause(event)" onclick="handleClick(event)">
+        <div id="overlay-play-button" onclick="startPlayback()">▶</div>
+      </div>
 
-  <main>
-    <section id="accueil" class="section active">
-      <h1>Black Perruche</h1>
-      <p>Un duo perché. Deux voix. Une énergie soul-pop.</p>
-    </section>
+      <div id="accueil" class="section">
+        <h1 class="highlight"><em>“Un style virevoltant qui vous met les plumes”</em></h1>
+      </div>
 
-    <section id="origines" class="section">
-      <h2>Origines</h2>
-      <div class="bios">
-        <div class="bio-block">
-          <img src="jack.jpg" alt="Jack" class="bio-img" onclick="toggleBio('jack')">
-          <button onclick="toggleBio('jack')">Voir Jack</button>
-          <div id="bio-jack" class="bio-text"></div>
+      <div id="origines" class="section">
+        <h1 class="highlight small origine-phrase">
+          <em>
+            “Maître Perruche sur un arbre avec 2 mecs perchés,<br>
+            chantait dans son bec un air à la tangente<br>
+            de la musique noire américaine et de la pop culture.”
+          </em>
+        </h1>
+
+        <div class="boutons-bio">
+          <button onclick="toggleBio('jack')">🎤 Voir Jack</button>
+          <button onclick="toggleBio('james')">🎸 Voir James</button>
         </div>
-        <div class="bio-block">
-          <img src="james.jpg" alt="James" class="bio-img" onclick="toggleBio('james')">
-          <button onclick="toggleBio('james')">Voir James</button>
-          <div id="bio-james" class="bio-text"></div>
+
+        <div class="origines-row">
+          <div class="origine-profil" id="profil-jack">
+            <img src="jack.jpg" alt="Jack">
+            <p class="bio-text" id="bio-jack"></p>
+          </div>
+          <div class="origine-profil" id="profil-james">
+            <img src="james.jpg" alt="James">
+            <p class="bio-text" id="bio-james"></p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section id="reseaux" class="section">
-      <h2>Réseaux</h2>
-      <p>Viens nous écouter sur ton réseau préféré 🎶</p>
-      <div class="reseaux">
-        <a href="#"><img src="instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="youtube.png" alt="YouTube"></a>
-        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+      <div id="reseaux" class="section">
+        <h2 class="highlight"><em>Viens nous écouter sur ton réseau préféré</em><span class="icon">🎶</span></h2>
+        <div class="reseaux-icons">
+          <a href="https://www.instagram.com/blackperruche" target="_blank" class="reseau-icon">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.tiktok.com/@black.perruche" target="_blank" class="reseau-icon">
+            <img src="tiktok.png" alt="TikTok">
+          </a>
+          <a href="https://www.youtube.com/@BlackPerruche" target="_blank" class="reseau-icon">
+            <img src="youtube.png" alt="YouTube">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576150134806" target="_blank" class="reseau-icon">
+            <img src="facebook.png" alt="Facebook">
+          </a>
+        </div>
       </div>
-    </section>
 
-    <section id="concerts" class="section">
-      <h2>Concerts</h2>
-      <p>Retrouve-nous bientôt sur scène !</p>
-    </section>
+      <div id="concerts" class="section">
+        <h2 class="highlight"><em>Viens nous voir jouer le...</em></h2>
+        <p class="concert-infos">
+          <span>28 Juin</span> · 
+          <span>19h</span> · 
+          <span>à La Friche en Herbe</span> · 
+          <span>15 Rue Emile Zola, 39400 Hauts-de-Bienne</span>
+        </p>
+      </div>
 
-    <section id="playlists" class="section">
-      <h2>Playlists</h2>
-      <p>Nos morceaux préférés, à écouter sans modération.</p>
-    </section>
+      <div id="playlists" class="section">
+        <h2 class="playlist-title highlight">Choisis toi-même ton concert selon le mood recherché :</h2>
+        <ul class="playlist-list">
+          <li>
+            <img src="logo.png" alt="Logo Black Perruche" class="playlist-logo">
+            <strong>La Black Perruche</strong> : un style virevoltant qui te met les plumes, pour un moment original et authentique (pop rock, folk, blues, soul, funk et R’n’B)
+          </li>
+          <li>
+            <span class="icon">🔥</span>
+            <strong>La Groove 1 Max</strong> : la vibe afro-américaine réveille le danseur fou qui est en toi (blues, soul, funk et R’N’B)
+          </li>
+          <li>
+            <span class="icon">🌙</span>
+            <strong>La Chill Revival</strong> : laisse-toi bercer par les sons pop-rock qui ont façonné notre époque, un voyage zen et mélodique (pop rock)
+          </li>
+          <li>
+            <span class="icon">⚡</span>
+            <strong>L’Énergique</strong> : refais le plein d’ondes positives et recharge les batteries de façon optimale (funk, blues rock et pop rock)
+          </li>
+        </ul>
+        <h2 class="playlist-question highlight">Alors t’es plutôt de quelle humeur ?</h2>
+      </div>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/xzbnjeyj" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" required>
+      <div id="contact" class="section">
+        <p><span class="label">Mail :</span> <a href="mailto:perrucheblack@gmail.com">perrucheblack@gmail.com</a></p>
+        <p><span class="label">Téléphone :</span> <a href="tel:0614855061">06 14 85 50 61</a></p>
 
-        <label for="email">Email :</label>
-        <input type="email" name="email" id="email" required>
+        <form action="https://formspree.io/f/myzwdbdo" method="POST" class="contact-form">
+          <input type="text" name="nom" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre e-mail" required>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_next" value="https://blackperruche.github.io/merci.html">
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
 
-        <label for="message">Message :</label>
-        <textarea name="message" id="message" required></textarea>
+    <audio id="audio-player" src="" preload="auto"></audio>
+    <script>
+      const playlist = [...Array(10)].map((_, i) => ({ file: audio${i + 1}.mp3 }));
+      let currentTrack = 0;
+      const audio = document.getElementById('audio-player');
+      const playButton = document.getElementById('overlay-play-button');
 
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <audio id="audio-player" src="audio1.mp3"></audio>
-  <script>
-    const audio = document.getElementById('audio-player');
-    const playButton = document.getElementById('play-button');
-    const logo = document.getElementById('logo');
-    let trackNumber = 1;
-    let clickCount = 0;
-    let timer;
-
-    function playTrack(number) {
-      audio.src = 'audio' + number + '.mp3';
-      audio.play();
-    }
-
-    playButton.addEventListener('click', () => {
-      clickCount++;
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        if (clickCount === 1) {
-          if (audio.paused) {
-            audio.play();
-          } else {
-            audio.pause();
-          }
-        } else if (clickCount === 2) {
-          trackNumber = trackNumber % 10 + 1;
-          playTrack(trackNumber);
-        }
-        clickCount = 0;
-      }, 300);
-    });
-
-    // Bio animation JS
-    const bios = {
-      jack: "Jack est un feu follet de la soul, passionné par la scène et les improvisations déjantées.",
-      james: "James est un explorateur du groove, toujours prêt à transformer chaque note en aventure."
-    };
-
-    const states = {
-      jack: 0,
-      james: 0
-    };
-
-    function toggleBio(name) {
-      const element = document.getElementById(`bio-${name}`);
-      const state = states[name];
-      if (state === 0) {
-        element.innerHTML = "";
-        let words = bios[name].split(" ");
-        let i = 0;
-        let interval = setInterval(() => {
-          if (i < words.length) {
-            element.innerHTML += words[i] + " ";
-            i++;
-          } else {
-            clearInterval(interval);
-          }
-        }, 100);
-        states[name] = 1;
-      } else if (state === 1) {
-        element.innerHTML = "";
-        states[name] = 2;
-      } else {
-        element.innerHTML = bios[name];
-        states[name] = 0;
+      function playCurrentTrack() {
+        audio.src = playlist[currentTrack].file;
+        audio.play().then(() => playButton.style.display = "none").catch(() => playButton.style.display = "block");
+        audio.onended = () => {
+          currentTrack = (currentTrack + 1) % playlist.length;
+          playCurrentTrack();
+        };
       }
-    }
-  </script>
+
+      function startPlayback() {
+        playCurrentTrack();
+      }
+
+      function handleClick(event) {
+        event.stopPropagation();
+        currentTrack = (currentTrack + 1) % playlist.length;
+        playCurrentTrack();
+      }
+
+      function togglePlayPause(event) {
+        event.stopPropagation();
+        audio.paused ? audio.play() : audio.pause();
+      }
+
+      function showSection(id) {
+        document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+      }
+
+      window.onload = () => {
+        showSection('accueil');
+      };
+
+      const bios = {
+        jack: {
+          element: document.getElementById("bio-jack"),
+          container: document.getElementById("profil-jack"),
+          text: Issu d’une famille mélomane, Mathieu alias Jack, se révèle une passion pour le chant à ses 15 ans. Il intègre plusieurs groupes amateurs (pop anglaise, rock français) mais surtout des duos (jazz et pop-rock). Après une longue pause à se chercher il revient à l’évidence : il faut se consacrer à la musique. Une formation de technicien du son studio dans la poche, il enchaîne les projets solos : un 1er EP électro-pop sous le pseudo « Carmen » puis un 2 ème en préparation, cette fois-ci sous « Matheus » et des chansons à textes. Rêveur, appliqué avec une touche de folie, Jack retrouve avec Black Perruche l’énergie des duos en osmose.,
+          click: 0
+        },
+        james: {
+          element: document.getElementById("bio-james"),
+          container: document.getElementById("profil-james"),
+          text: C’est à 16 ans que Jérémy alias James, débourse sa première paye pour s’acheter une guitare électrique avec ampli. Autodidacte, il commence par des reprises de rock alternatif et de punk rock comme Nirvana et Sex Pistols. Il élargit son univers au fur et à mesure des rencontres, pour finalement ne pas se donner de limite. Il apprend mais enseigne aussi à de nombreux élèves. S’il multiplie les formations amateurs, il collabore notamment avec Amazigh Kateb. Vous l’aurez compris, la guitare a toujours fait partie intégrante de sa vie. Apaisant, mélodieux et passionné il saura faire vibrer les coeurs comme il fait vibrer les cordes de ses doigts.,
+          click: 0
+        }
+      };
+
+      function typeText(name, index = 0) {
+        const bio = bios[name];
+        const words = bio.text.split(" ");
+        if (index < words.length) {
+          bio.element.innerHTML = words.slice(0, index + 1).join(" ") + " ";
+          setTimeout(() => typeText(name, index + 1), 35);
+        }
+      }
+
+      function toggleBio(name) {
+        const bio = bios[name];
+        bio.click++;
+        if (bio.click % 3 === 1) {
+          bio.container.style.display = "block";
+          bio.element.innerText = "";
+          typeText(name);
+        } else if (bio.click % 3 === 2) {
+          bio.container.style.display = "none";
+          bio.element.innerText = "";
+        } else {
+          bio.container.style.display = "block";
+          bio.element.innerText = bio.text;
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
+      }
+    </script>
+  </div>
 </body>
 </html>
