@@ -190,39 +190,6 @@ nav a:hover {
   margin-top: 10px;
 }
 
-.playlist-title,
-.playlist-question {
-  margin-top: 30px;
-}
-
-.playlist-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.playlist-list li {
-  margin-bottom: 25px;
-  text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5em;
-}
-
-.playlist-logo {
-  width: 25px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.icon {
-  margin-left: 10px;
-  margin-right: 8px;
-  font-size: 1.2em;
-}
-
 #contact p {
   margin: 10px 0;
   font-size: 1.1em;
@@ -314,6 +281,27 @@ nav a:hover {
   50% { opacity: 0.2; }
 }
 
+/* ------- NOUVELLE GALERIE CONCERTS ------- */
+.concerts-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.concerts-gallery img {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.concerts-gallery img:hover {
+  transform: scale(1.05);
+}
+
 /* ----------- VERSION MOBILE ------------ */
 @media (max-width: 768px) {
   .background-overlay {
@@ -383,11 +371,6 @@ nav a:hover {
     height: 45px;
   }
 
-  .playlist-list li {
-    font-size: 0.95em;
-    padding: 0 10px;
-  }
-
   .logo {
     width: 160px;
   }
@@ -400,5 +383,9 @@ nav a:hover {
   .contact-form textarea {
     width: 100%;
     max-width: 100%;
+  }
+
+  .concerts-gallery img {
+    width: 80%;
   }
 }
