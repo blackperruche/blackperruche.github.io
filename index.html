@@ -160,7 +160,7 @@
   bio.click++;
 
   if (bio.click % 2 === 1) {
-    // odd clicks (1st, 3rd, 5th, ...)
+    // odd clicks
     bio.element.style.display = "block";
     bio.element.innerText = "";
     if (!bio.animatedOnce) {
@@ -170,11 +170,11 @@
       bio.element.innerText = bio.text;
     }
   } else {
-    // even clicks (2nd, 4th, 6th, ...)
+    // even clicks
     bio.element.style.display = "none";
     bio.element.innerText = "";
   }
-    </script>
-  </div>
+}
+</script>
 </body>
 </html>
