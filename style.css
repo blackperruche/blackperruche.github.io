@@ -93,7 +93,6 @@ nav a:hover {
 .origine-profil {
   text-align: center;
   max-width: 100%;
-  display: none;
 }
 
 .origine-profil img {
@@ -120,6 +119,7 @@ nav a:hover {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: none;
 }
 
 .reseaux-icons {
