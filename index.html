@@ -35,17 +35,13 @@
           chantait dans son bec un air à la tangente<br>
           de la musique noire américaine et de la pop culture.”</em>
         </h1>
-        <div class="boutons-bio">
-          <button onclick="toggleBio('jack')">🎤 Voir Jack</button>
-          <button onclick="toggleBio('james')">🎸 Voir James</button>
-        </div>
         <div class="origines-row">
           <div class="origine-profil" id="profil-jack">
-            <img src="jack.jpg" alt="Jack">
+            <img src="jack.jpg" alt="Jack" onclick="toggleBio('jack')">
             <p class="bio-text" id="bio-jack"></p>
           </div>
           <div class="origine-profil" id="profil-james">
-            <img src="james.jpg" alt="James">
+            <img src="james.jpg" alt="James" onclick="toggleBio('james')">
             <p class="bio-text" id="bio-james"></p>
           </div>
         </div>
