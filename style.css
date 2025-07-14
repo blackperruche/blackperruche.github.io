@@ -82,30 +82,6 @@ nav a:hover {
   max-width: 800px;
 }
 
-.boutons-bio {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.boutons-bio button {
-  padding: 10px 20px;
-  background-color: gold;
-  color: black;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.boutons-bio button:hover {
-  background-color: #e6c200;
-  transform: scale(1.05);
-}
-
 .origines-row {
   display: flex;
   justify-content: center;
@@ -127,6 +103,11 @@ nav a:hover {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.origine-profil img:hover {
+  transform: scale(1.05);
 }
 
 .bio-text {
@@ -182,12 +163,6 @@ nav a:hover {
 #reseaux .icon {
   color: #FFD700;
   font-size: 1.6em;
-}
-
-.concert-infos {
-  color: white;
-  font-size: 1.1em;
-  margin-top: 10px;
 }
 
 #contact p {
@@ -339,11 +314,6 @@ nav a:hover {
   .origine-phrase {
     font-size: 1em;
     margin: 20px auto;
-  }
-
-  .boutons-bio {
-    flex-direction: column;
-    gap: 15px;
   }
 
   .origines-row {
