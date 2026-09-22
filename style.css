@@ -256,28 +256,31 @@ nav a:hover {
   50% { opacity: 0.2; }
 }
 
-/* ------- NOUVELLE GALERIE CONCERTS ------- */
-.concerts-gallery {
+/* ----------- PRESTATIONS ----------- */
+
+.prestations-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 25px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-.concerts-gallery img {
-  width: 300px;
-  max-width: 90%;
+.prestations-container img {
+  width: 650px;
+  max-width: 95%;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.concerts-gallery img:hover {
-  transform: scale(1.05);
+.prestations-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
 }
 
 /* ----------- VERSION MOBILE ------------ */
+
 @media (max-width: 768px) {
   .background-overlay {
     padding-top: 80px;
@@ -355,7 +358,8 @@ nav a:hover {
     max-width: 100%;
   }
 
-  .concerts-gallery img {
-    width: 80%;
+  .prestations-container img {
+    width: 100%;
+    max-width: 100%;
   }
 }
